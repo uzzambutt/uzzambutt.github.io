@@ -1,0 +1,988 @@
+<html lang="en"><head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Muhammad Uzzam Butt — AI &amp; Blockchain Developer</title>
+    <meta name="description" content="AI &amp; Blockchain Developer building intelligent systems for the decentralized future. Specializing in deep learning, predictive modeling, and blockchain technology.">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    /* Smooth scrolling */
+    html { scroll-behavior: smooth; }
+    /* Enhanced entrance animations */
+    .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    opacity: 0;
+    transform: translateY(30px);
+    }
+    .animate-fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    opacity: 0;
+    }
+    .animate-slide-in-left {
+    animation: slideInLeft 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    opacity: 0;
+    transform: translateX(-40px);
+    }
+    .animate-slide-in-right {
+    animation: slideInRight 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    opacity: 0;
+    transform: translateX(40px);
+    }
+    .animate-scale-in {
+    animation: scaleIn 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    }
+    .animate-float {
+    animation: float 6s ease-in-out infinite;
+    }
+    .animate-bounce-subtle {
+    animation: bounceSubtle 2s ease-in-out infinite;
+    }
+    /* Scroll-triggered animations */
+    .scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .scroll-animate.animate {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    .scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .scroll-slide-left.animate {
+    opacity: 1;
+    transform: translateX(0);
+    }
+    .scroll-slide-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .scroll-slide-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+    }
+    .scroll-scale {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .scroll-scale.animate {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    }
+    .scroll-rotate {
+    opacity: 0;
+    transform: rotate(-5deg) scale(0.95);
+    transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .scroll-rotate.animate {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    }
+    /* Sequential delays for entrance */
+    .delay-0 { animation-delay: 0ms; }
+    .delay-100 { animation-delay: 100ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .delay-400 { animation-delay: 400ms; }
+    .delay-500 { animation-delay: 500ms; }
+    .delay-600 { animation-delay: 600ms; }
+    .delay-700 { animation-delay: 700ms; }
+    .delay-800 { animation-delay: 800ms; }
+    .delay-900 { animation-delay: 900ms; }
+    .delay-1000 { animation-delay: 1000ms; }
+    .delay-1200 { animation-delay: 1200ms; }
+    .delay-1400 { animation-delay: 1400ms; }
+    /* Sequential delays for scroll animations */
+    .scroll-delay-0 { transition-delay: 0ms; }
+    .scroll-delay-100 { transition-delay: 100ms; }
+    .scroll-delay-200 { transition-delay: 200ms; }
+    .scroll-delay-300 { transition-delay: 300ms; }
+    .scroll-delay-400 { transition-delay: 400ms; }
+    .scroll-delay-500 { transition-delay: 500ms; }
+    .scroll-delay-600 { transition-delay: 600ms; }
+    /* Keyframes */
+    @keyframes fadeInUp {
+    from {
+    opacity: 0;
+    transform: translateY(30px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+    @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+    }
+    @keyframes slideInLeft {
+    from {
+    opacity: 0;
+    transform: translateX(-40px);
+    }
+    to {
+    opacity: 1;
+    transform: translateX(0);
+    }
+    }
+    @keyframes slideInRight {
+    from {
+    opacity: 0;
+    transform: translateX(40px);
+    }
+    to {
+    opacity: 1;
+    transform: translateX(0);
+    }
+    }
+    @keyframes scaleIn {
+    from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    }
+    to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    }
+    }
+    @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    }
+    @keyframes bounceSubtle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    }
+    /* Stagger animations for groups */
+    .stagger-entrance > *:nth-child(1) { animation-delay: 0ms; }
+    .stagger-entrance > *:nth-child(2) { animation-delay: 150ms; }
+    .stagger-entrance > *:nth-child(3) { animation-delay: 300ms; }
+    .stagger-entrance > *:nth-child(4) { animation-delay: 450ms; }
+    .stagger-entrance > *:nth-child(5) { animation-delay: 600ms; }
+    .stagger-entrance > *:nth-child(6) { animation-delay: 750ms; }
+    .stagger-scroll > *:nth-child(1) { transition-delay: 0ms; }
+    .stagger-scroll > *:nth-child(2) { transition-delay: 150ms; }
+    .stagger-scroll > *:nth-child(3) { transition-delay: 300ms; }
+    .stagger-scroll > *:nth-child(4) { transition-delay: 450ms; }
+    .stagger-scroll > *:nth-child(5) { transition-delay: 600ms; }
+    .stagger-scroll > *:nth-child(6) { transition-delay: 750ms; }
+    /* Scroll progress bar */
+    .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #6366f1, #06b6d4);
+    z-index: 100;
+    transition: width 0.3s ease;
+    }
+    /* Parallax elements */
+    .parallax {
+    transition: transform 0.1s ease-out;
+    }
+    </style>
+    <link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style></head>
+      <body class="antialiased bg-zinc-950 text-zinc-200 [font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif] overflow-x-hidden">
+        <!-- Scroll progress bar -->
+        <div class="scroll-progress" style="width: 0%;"></div>
+        
+        <div class="spline-container fixed top-0 w-full h-screen -z-10"><iframe src="https://my.spline.design/liquidgradientabstractbackground-gEjylYLumN1b1CUcuIb8DyUA" frameborder="0" width="100%" height="100%" class=""></iframe></div>
+        
+        <!-- Subtle background accents -->
+        <div class="pointer-events-none fixed inset-0 -z-10">
+          <div class="absolute inset-0 parallax" style="background: radial-gradient(600px 300px at 20% 10%, rgba(99, 102, 241, 0.18), transparent 60%), radial-gradient(500px 250px at 80% 30%, rgba(56, 189, 248, 0.18), transparent 55%), radial-gradient(400px 200px at 60% 80%, rgba(250, 204, 21, 0.08), transparent 60%); transform: translateY(0px);"></div>
+          <div class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(24,24,27,0)_0%,rgba(24,24,27,0.75)_40%,rgba(24,24,27,1)_100%)]"></div>
+          <div class="absolute inset-0 bg-[url('data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22 viewBox=%220 0 48 48%22&gt;&lt;path fill=%22rgba(255,255,255,0.035)%22 d=%22M0 0h1v1H0z%22/&gt;&lt;/svg&gt;')] opacity-60"></div>
+        </div>
+    
+        <!-- Nav -->
+        <header class="sticky top-0 z-50">
+          <div class="mx-auto max-w-7xl px-5">
+            <div class="mt-4 mb-4 flex items-center justify-between rounded-xl border border-white/10 bg-zinc-900/40 px-4 py-3 backdrop-blur animate-fade-in delay-0">
+              <a href="#" class="flex items-center gap-3 animate-scale-in delay-200">
+                <div class="flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-indigo-500 to-cyan-400 text-white text-sm font-bold tracking-tight font-geist">UB</div>
+                <span class="text-sm text-white tracking-tight font-geist">Uzzam Butt</span>
+              </a>
+              <nav class="hidden items-center gap-7 md:flex stagger-entrance">
+                <a href="#projects" class="text-sm text-zinc-300 hover:text-white transition-colors font-geist tracking-tight animate-fade-in-up delay-300">Projects</a>
+                <a href="#achievements" class="text-sm text-zinc-300 hover:text-white transition-colors font-geist tracking-tight animate-fade-in-up delay-400">Achievements</a>
+                <a href="#tech-stack" class="text-sm text-zinc-300 hover:text-white transition-colors font-geist tracking-tight animate-fade-in-up delay-500">Tech Stack</a>
+                <a href="#testimonials" class="text-sm text-zinc-300 hover:text-white transition-colors font-geist tracking-tight animate-fade-in-up delay-600">Testimonials</a>
+              </nav>
+              <div class="flex items-center gap-3 stagger-entrance">
+                <a href="mailto:uzzambutt1@outlook.com" class="hidden ring-1 ring-white/10 transition hover:text-white hover:ring-white/30 md:inline-flex animate-fade-in-up delay-700 text-sm text-zinc-300 tracking-tight font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">Contact</a>
+                <a href="#cta" class="inline-flex items-center gap-2 animate-scale-in delay-800 tracking-tight font-geist" style="--green: #1BFD9C; font-size: 14px; padding: 0.5rem 0.75rem; letter-spacing: 0.06em; position: relative; font-family: inherit; border-radius: 0.5rem; overflow: hidden; transition: all 0.3s; line-height: 1.4em; border: 2px solid var(--green); background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%); color: var(--green); box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);">Download Resume</a>
+                <button class="md:hidden p-2 text-zinc-300 animate-fade-in delay-900" onclick="toggleMobileMenu()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" class="lucide lucide-menu h-5 w-5"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg>
+                </button>
+              </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="hidden rounded-xl border border-white/10 bg-zinc-900/40 backdrop-blur mb-4 p-4">
+              <nav class="space-y-3 stagger-entrance">
+                <a href="#projects" class="block text-sm text-zinc-300 hover:text-white transition-colors font-geist tracking-tight animate-fade-in-up">Projects</a>
+                <a href="#achievements" class="block text-sm text-zinc-300 hover:text-white transition-colors font-geist tracking-tight animate-fade-in-up">Achievements</a>
+                <a href="#tech-stack" class="block text-sm text-zinc-300 hover:text-white transition-colors font-geist tracking-tight animate-fade-in-up">Tech Stack</a>
+                <a href="#testimonials" class="block text-sm text-zinc-300 hover:text-white transition-colors font-geist tracking-tight animate-fade-in-up">Testimonials</a>
+                <hr class="border-white/10">
+                <a href="mailto:uzzambutt1@outlook.com" class="block text-sm text-zinc-300 hover:text-white transition-colors font-geist tracking-tight animate-fade-in-up">Contact</a>
+              </nav>
+            </div>
+          </div>
+        </header>
+    
+        <!-- Hero -->
+        <section class="relative">
+          <div class="mx-auto max-w-7xl px-5 pt-8 pb-16 md:pb-24">
+            <div class="flex justify-center">
+              <div class="space-y-6 max-w-3xl text-center">
+                <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-zinc-900/40 px-3 py-1 text-[11px] text-zinc-300 animate-fade-in-up delay-200 font-geist tracking-tight">
+                  <span class="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400 animate-bounce-subtle"></span> Available for freelance opportunities and collaborations
+                </p>
+                <h1 class="text-4xl md:text-5xl tracking-tight text-white animate-fade-in-up delay-400 font-bricolage font-light">
+                  AI & Blockchain Developer | Building Intelligent Systems for the Decentralized Future
+                </h1>
+                <p class="max-w-xl mx-auto text-base text-zinc-400 animate-fade-in-up delay-600 font-geist tracking-tight">
+                  I'm a developer passionate about artificial intelligence, finance, and decentralized systems. I build tools that combine deep learning, predictive modeling, and blockchain technology — from crypto forecasting models to smart-contract-powered applications.
+                </p>
+                <div id="cta" class="flex flex-col gap-3 sm:flex-row sm:justify-center animate-fade-in-up delay-800">
+                  <a href="#" class="inline-flex items-center justify-center gap-2 font-geist tracking-tight animate-float" style="--green: #1BFD9C; font-size: 15px; padding: 0.7em 2.7em; letter-spacing: 0.06em; position: relative; font-family: inherit; border-radius: 0.6em; overflow: hidden; transition: all 0.3s; line-height: 1.4em; border: 2px solid var(--green); background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%); color: var(--green); box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="download" class="lucide lucide-download h-4 w-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+                    Download Resume
+                  </a>
+                  <a href="#projects" class="inline-flex items-center justify-center gap-2 font-geist tracking-tight animate-float" style="--white: #FFFFFF; font-size: 15px; padding: 0.7em 2.7em; letter-spacing: 0.06em; position: relative; font-family: inherit; border-radius: 0.6em; overflow: hidden; transition: all 0.3s; line-height: 1.4em; border: 2px solid var(--white); background: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1%, transparent 40%, transparent 60%, rgba(255, 255, 255, 0.1) 100%); color: var(--white); box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.4), 0 0 9px 3px rgba(255, 255, 255, 0.1);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="code-2" class="lucide lucide-code-2 h-4 w-4"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
+                    View Projects
+                  </a>
+                </div>
+                <div class="flex items-center justify-center gap-4 pt-2 animate-fade-in-up delay-1000 stagger-entrance">
+                  <a href="https://www.instagram.com/itz.uzzam?igsh=YnFnNjRjeGc4eHcx" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10 transition hover:bg-white/10 hover:ring-white/30 animate-scale-in delay-1100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-300"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                  </a>
+                  <a href="https://linkedin.com/in/uzzambutt" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10 transition hover:bg-white/10 hover:ring-white/30 animate-scale-in delay-1200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-300"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  </a>
+                  <a href="mailto:uzzambutt1@outlook.com" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10 transition hover:bg-white/10 hover:ring-white/30 animate-scale-in delay-1300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-300"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Stats Section -->
+        <section id="achievements" class="relative border-t border-white/10">
+          <div class="mx-auto max-w-7xl px-5 py-16 md:py-20">
+            <div class="grid grid-cols-2 gap-6 md:grid-cols-4 stagger-scroll">
+              <div class="text-center scroll-animate scroll-delay-0">
+                <div class="text-3xl tracking-tight text-white font-bricolage font-light">3+</div>
+                <div class="mt-1 text-sm text-zinc-400 font-geist tracking-tight">Major Projects</div>
+              </div>
+              <div class="text-center scroll-animate scroll-delay-100">
+                <div class="text-3xl tracking-tight text-white font-bricolage font-light">100%</div>
+                <div class="mt-1 text-sm text-zinc-400 font-geist tracking-tight">Open Source</div>
+              </div>
+              <div class="text-center scroll-animate scroll-delay-200">
+                <div class="text-3xl tracking-tight text-white font-bricolage font-light">AI+Web3</div>
+                <div class="mt-1 text-sm text-zinc-400 font-geist tracking-tight">Core Expertise</div>
+              </div>
+              <div class="text-center scroll-animate scroll-delay-300">
+                <div class="text-3xl tracking-tight text-white font-bricolage font-light">Top</div>
+                <div class="mt-1 text-sm text-zinc-400 font-geist tracking-tight">GitHub Contributor</div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Projects -->
+        <section id="projects" class="relative border-t border-white/10">
+          <div class="mx-auto max-w-7xl px-5 py-16 md:py-20">
+            <div class="mb-10 flex items-end justify-between">
+              <div class="scroll-slide-left scroll-delay-0">
+                <h2 class="text-3xl md:text-4xl tracking-tight text-white font-bricolage font-light">Featured Projects</h2>
+                <p class="mt-2 max-w-2xl text-zinc-400 font-geist tracking-tight">Innovative solutions combining AI, blockchain, and predictive modeling to solve real-world problems.</p>
+              </div>
+              <a href="https://github.com/uzzambutt" target="_blank" class="hidden md:inline-flex items-center gap-2 rounded-lg bg-white/5 px-3 py-2 text-sm text-white ring-1 ring-white/10 transition hover:bg-white/10 hover:ring-white/30 scroll-slide-right scroll-delay-0 font-geist tracking-tight">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="github" class="lucide lucide-github h-4 w-4"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                View GitHub
+              </a>
+            </div>
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-3 stagger-scroll">
+              <div class="rounded-2xl border border-white/10 bg-zinc-900/40 p-6 transition hover:border-white/20 hover:bg-zinc-900/60 scroll-animate scroll-delay-0 group">
+                <div class="flex h-10 w-10 items-center justify-center rounded-md bg-indigo-500/20 ring-1 ring-indigo-300/30 animate-bounce-subtle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="brain-circuit" class="lucide lucide-brain-circuit h-5 w-5 text-indigo-300"><path d="M12 4.5a2.5 2.5 0 0 0-4.96-.46 2.5 2.5 0 0 0-1.98 3 2.5 2.5 0 0 0-1.32 4.24 3 3 0 0 0 .34 5.58 2.5 2.5 0 0 0 2.96 3.08 2.5 2.5 0 0 0 4.91.05L12 20V4.5Z"></path><path d="M16 8V5c0-1.1.9-2 2-2"></path><path d="M12 13h4"></path><path d="M12 18h6a2 2 0 0 1 2 2v1"></path><path d="M12 8h8"></path><path d="M20.5 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"></path><path d="M16.5 13a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"></path><path d="M20.5 21a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"></path></svg>
+                </div>
+                <h3 class="mt-4 text-lg text-white font-geist tracking-tight">AICryptoPrediction</h3>
+                <p class="mt-2 text-sm text-zinc-400 font-geist tracking-tight">Deep learning-based Ethereum price forecasting system powered by PyTorch with real-time price APIs.</p>
+                <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+                  <li class="flex items-center gap-2 font-geist tracking-tight"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check h-4 w-4 text-emerald-400"><path d="M20 6 9 17l-5-5"></path></svg>PyTorch neural networks</li>
+                  <li class="flex items-center gap-2 font-geist tracking-tight"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check h-4 w-4 text-emerald-400"><path d="M20 6 9 17l-5-5"></path></svg>Real-time price analysis</li>
+                  <li class="flex items-center gap-2 font-geist tracking-tight"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check h-4 w-4 text-emerald-400"><path d="M20 6 9 17l-5-5"></path></svg>Predictive modeling</li>
+                </ul>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-zinc-900/40 p-6 transition hover:border-white/20 hover:bg-zinc-900/60 scroll-animate scroll-delay-100 group">
+                <div class="flex h-10 w-10 items-center justify-center rounded-md bg-amber-500/20 ring-1 ring-amber-300/30 animate-bounce-subtle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="blocks" class="lucide lucide-blocks h-5 w-5 text-amber-300"><rect width="7" height="7" x="14" y="3" rx="1"></rect><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"></path></svg>
+                </div>
+                <h3 class="mt-4 text-lg text-white font-geist tracking-tight">NorthernPay</h3>
+                <p class="mt-2 text-sm text-zinc-400 font-geist tracking-tight">Blockchain payment and analytics platform built on Polygon for fast, secure decentralized transactions.</p>
+                <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+                  <li class="flex items-center gap-2 font-geist tracking-tight"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check h-4 w-4 text-emerald-400"><path d="M20 6 9 17l-5-5"></path></svg>Polygon blockchain</li>
+                  <li class="flex items-center gap-2 font-geist tracking-tight"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check h-4 w-4 text-emerald-400"><path d="M20 6 9 17l-5-5"></path></svg>Smart contracts</li>
+                  <li class="flex items-center gap-2 font-geist tracking-tight"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check h-4 w-4 text-emerald-400"><path d="M20 6 9 17l-5-5"></path></svg>Payment analytics</li>
+                </ul>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-zinc-900/40 p-6 transition hover:border-white/20 hover:bg-zinc-900/60 scroll-animate scroll-delay-200 group">
+                <div class="flex h-10 w-10 items-center justify-center rounded-md bg-emerald-500/20 ring-1 ring-emerald-300/30 animate-bounce-subtle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="coins" class="lucide lucide-coins h-5 w-5 text-emerald-300"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="M7 6h1v4"></path><path d="m16.71 13.88.7.71-2.82 2.82"></path></svg>
+                </div>
+                <h3 class="mt-4 text-lg text-white font-geist tracking-tight">PKR Stablecoin</h3>
+                <p class="mt-2 text-sm text-zinc-400 font-geist tracking-tight">Experimental stablecoin pegged to PKR for testing economic stability models and decentralized finance mechanisms.</p>
+                <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+                  <li class="flex items-center gap-2 font-geist tracking-tight"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check h-4 w-4 text-emerald-400"><path d="M20 6 9 17l-5-5"></path></svg>PKR peg mechanism</li>
+                  <li class="flex items-center gap-2 font-geist tracking-tight"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check h-4 w-4 text-emerald-400"><path d="M20 6 9 17l-5-5"></path></svg>Economic modeling</li>
+                  <li class="flex items-center gap-2 font-geist tracking-tight"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check h-4 w-4 text-emerald-400"><path d="M20 6 9 17l-5-5"></path></svg>DeFi experiments</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Why Choose Me Section -->
+        <section id="why-choose-me" class="relative border-t border-white/10">
+          <div class="mx-auto max-w-7xl px-5 py-16 md:py-20">
+            <div class="text-center mb-12 scroll-animate scroll-delay-0">
+              <h2 class="text-3xl md:text-4xl tracking-tight text-white font-bricolage font-light">Why Choose Me</h2>
+              <p class="mt-3 text-zinc-400 max-w-2xl mx-auto font-geist tracking-tight">Combining cutting-edge AI expertise with blockchain innovation to deliver exceptional results.</p>
+            </div>
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3 stagger-scroll md:items-stretch">
+              <div class="relative scroll-animate scroll-delay-0 flex flex-col">
+                <div class="absolute left-1/2 top-16 h-24 w-px bg-gradient-to-b from-indigo-500/50 to-transparent hidden md:block"></div>
+                <div class="relative rounded-2xl border border-indigo-300/20 bg-gradient-to-br from-indigo-500/5 via-zinc-900/40 to-zinc-900/60 backdrop-blur-sm p-6 transition-all duration-300 hover:border-indigo-300/40 hover:bg-gradient-to-br hover:from-indigo-500/10 hover:via-zinc-900/50 hover:to-zinc-900/70 group flex-1 flex flex-col">
+                  <div class="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-transparent blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                  <div class="relative text-center flex-1 flex flex-col">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500/20 ring-1 ring-indigo-300/30 shadow-lg shadow-indigo-500/10 animate-float">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="brain-circuit" class="lucide lucide-brain-circuit h-8 w-8 text-indigo-300"><path d="M12 4.5a2.5 2.5 0 0 0-4.96-.46 2.5 2.5 0 0 0-1.98 3 2.5 2.5 0 0 0-1.32 4.24 3 3 0 0 0 .34 5.58 2.5 2.5 0 0 0 2.96 3.08 2.5 2.5 0 0 0 4.91.05L12 20V4.5Z"></path><path d="M16 8V5c0-1.1.9-2 2-2"></path><path d="M12 13h4"></path><path d="M12 18h6a2 2 0 0 1 2 2v1"></path><path d="M12 8h8"></path><path d="M20.5 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"></path><path d="M16.5 13a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"></path><path d="M20.5 21a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"></path></svg>
+                    </div>
+                    <h3 class="mt-4 text-lg text-white font-geist tracking-tight">Deep Technical Expertise</h3>
+                    <p class="mt-2 text-sm text-zinc-400 font-geist tracking-tight flex-1">Extensive experience in AI/ML frameworks and blockchain technologies, delivering production-ready solutions.</p>
+                    <div class="mt-4 rounded-lg border border-indigo-200/10 bg-zinc-900/60 backdrop-blur-sm p-4 shadow-inner">
+                      <div class="flex flex-col gap-2">
+                        <div class="flex items-center justify-between text-xs text-zinc-300 font-geist tracking-tight">
+                          <span>PyTorch & TensorFlow</span>
+                          <span class="text-indigo-300">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-zinc-300 font-geist tracking-tight">
+                          <span>Solidity & Web3</span>
+                          <span class="text-indigo-300">Advanced</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="relative scroll-animate scroll-delay-100 flex flex-col">
+                <div class="absolute left-1/2 top-16 h-24 w-px bg-gradient-to-b from-amber-500/50 to-transparent hidden md:block"></div>
+                <div class="relative rounded-2xl border border-amber-300/20 bg-gradient-to-br from-amber-500/5 via-zinc-900/40 to-zinc-900/60 backdrop-blur-sm p-6 transition-all duration-300 hover:border-amber-300/40 hover:bg-gradient-to-br hover:from-amber-500/10 hover:via-zinc-900/50 hover:to-zinc-900/70 group flex-1 flex flex-col">
+                  <div class="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-amber-500/20 to-transparent blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                  <div class="relative text-center flex-1 flex flex-col">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-amber-500/20 ring-1 ring-amber-300/30 shadow-lg shadow-amber-500/10 animate-float">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="rocket" class="lucide lucide-rocket h-8 w-8 text-amber-300"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+                    </div>
+                    <h3 class="mt-4 text-lg text-white font-geist tracking-tight">Proven Track Record</h3>
+                    <p class="mt-2 text-sm text-zinc-400 font-geist tracking-tight flex-1">Successfully delivered multiple AI and blockchain projects with measurable impact and client satisfaction.</p>
+                    <div class="mt-4 rounded-lg border border-amber-200/10 bg-zinc-900/60 backdrop-blur-sm p-4 shadow-inner">
+                      <div class="grid grid-cols-2 gap-3 text-center">
+                        <div>
+                          <div class="text-lg text-amber-300 font-bricolage font-light">3+</div>
+                          <div class="text-xs text-zinc-400 font-geist tracking-tight">Projects</div>
+                        </div>
+                        <div>
+                          <div class="text-lg text-amber-300 font-bricolage font-light">100%</div>
+                          <div class="text-xs text-zinc-400 font-geist tracking-tight">Satisfaction</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="relative scroll-animate scroll-delay-200 flex flex-col">
+                <div class="relative rounded-2xl border border-emerald-300/20 bg-gradient-to-br from-emerald-500/5 via-zinc-900/40 to-zinc-900/60 backdrop-blur-sm p-6 transition-all duration-300 hover:border-emerald-300/40 hover:bg-gradient-to-br hover:from-emerald-500/10 hover:via-zinc-900/50 hover:to-zinc-900/70 group flex-1 flex flex-col">
+                  <div class="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-transparent blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                  <div class="relative text-center flex-1 flex flex-col">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/20 ring-1 ring-emerald-300/30 shadow-lg shadow-emerald-500/10 animate-float">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="zap" class="lucide lucide-zap h-8 w-8 text-emerald-300"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+                    </div>
+                    <h3 class="mt-4 text-lg text-white font-geist tracking-tight">Fast & Reliable</h3>
+                    <p class="mt-2 text-sm text-zinc-400 font-geist tracking-tight flex-1">Efficient development with clean, well-documented code. Quick turnaround without compromising quality.</p>
+                    <div class="mt-4 rounded-lg border border-emerald-200/10 bg-zinc-900/60 backdrop-blur-sm p-4 shadow-inner">
+                      <div class="flex items-center justify-center gap-2">
+                        <span class="inline-flex items-center gap-1 rounded-md bg-emerald-500/15 px-2 py-1 text-xs text-emerald-300 ring-1 ring-emerald-400/20 font-geist tracking-tight">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check h-3 w-3"><path d="M20 6 9 17l-5-5"></path></svg>
+                          On-Time Delivery
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Tech Stack -->
+        <section id="tech-stack" class="relative border-t border-white/10">
+          <div class="mx-auto max-w-7xl px-5 py-16 md:py-20">
+            <div class="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+              <div class="scroll-slide-left scroll-delay-0">
+                <h2 class="text-3xl md:text-4xl tracking-tight text-white font-bricolage font-light">Technology Stack</h2>
+                <p class="mt-3 max-w-xl text-zinc-400 font-geist tracking-tight">Modern tools and frameworks powering AI-driven and blockchain-based solutions.</p>
+                <div class="mt-6 grid grid-cols-2 gap-4 stagger-scroll">
+                  <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-zinc-900/40 p-3 transition hover:border-white/20 hover:bg-zinc-900/60 scroll-scale scroll-delay-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="brain" class="lucide lucide-brain h-5 w-5 text-emerald-300 animate-bounce-subtle"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"></path><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"></path></svg>
+                    <div>
+                      <p class="text-sm text-white font-geist tracking-tight">AI/ML</p>
+                      <p class="text-xs text-zinc-400 font-geist tracking-tight">PyTorch, TensorFlow</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-zinc-900/40 p-3 transition hover:border-white/20 hover:bg-zinc-900/60 scroll-scale scroll-delay-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="link" class="lucide lucide-link h-5 w-5 text-indigo-300 animate-bounce-subtle"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                    <div>
+                      <p class="text-sm text-white font-geist tracking-tight">Blockchain</p>
+                      <p class="text-xs text-zinc-400 font-geist tracking-tight">Solidity, Web3.js</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-zinc-900/40 p-3 transition hover:border-white/20 hover:bg-zinc-900/60 scroll-scale scroll-delay-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="code" class="lucide lucide-code h-5 w-5 text-cyan-300 animate-bounce-subtle"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    <div>
+                      <p class="text-sm text-white font-geist tracking-tight">Languages</p>
+                      <p class="text-xs text-zinc-400 font-geist tracking-tight">Python, JavaScript</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-zinc-900/40 p-3 transition hover:border-white/20 hover:bg-zinc-900/60 scroll-scale scroll-delay-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="database" class="lucide lucide-database h-5 w-5 text-amber-300 animate-bounce-subtle"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14a9 3 0 0 0 18 0V5"></path><path d="M3 12a9 3 0 0 0 18 0"></path></svg>
+                    <div>
+                      <p class="text-sm text-white font-geist tracking-tight">Data</p>
+                      <p class="text-xs text-zinc-400 font-geist tracking-tight">Pandas, NumPy, APIs</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-6">
+                  <a href="https://github.com/uzzambutt" target="_blank" class="inline-flex items-center gap-2 tracking-tight font-geist" style="--green: #1BFD9C; font-size: 15px; padding: 0.7em 2.7em; letter-spacing: 0.06em; position: relative; font-family: inherit; border-radius: 0.6em; overflow: hidden; transition: all 0.3s; line-height: 1.4em; border: 2px solid var(--green); background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%); color: var(--green); box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);">
+                    View GitHub Repositories
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right h-4 w-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                </div>
+              </div>
+              <div class="relative scroll-slide-right scroll-delay-200">
+                <div class="absolute -inset-0.5 rounded-2xl bg-gradient-to-b from-cyan-400/20 to-indigo-500/20 blur-2xl opacity-40 animate-float"></div>
+                <div class="relative rounded-2xl border border-white/10 bg-zinc-900/40 p-6 backdrop-blur">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="layers" class="lucide lucide-layers h-5 w-5 text-indigo-300 animate-bounce-subtle"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg>
+                      <p class="text-sm text-white font-geist tracking-tight">Development Stack</p>
+                    </div>
+                    <span class="rounded-md bg-indigo-500/15 px-2 py-1 text-[11px] text-indigo-300 ring-1 ring-indigo-400/20 font-geist tracking-tight">Production Ready</span>
+                  </div>
+                  <div class="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2 stagger-scroll">
+                    <div class="rounded-lg border border-white/10 bg-zinc-900/50 p-4 scroll-scale scroll-delay-0">
+                      <p class="text-xs text-zinc-400 font-geist tracking-tight">Framework</p>
+                      <p class="text-sm text-white font-geist tracking-tight">PyTorch</p>
+                      <div class="mt-3 flex items-center justify-between">
+                        <div class="text-xs text-zinc-400 font-geist tracking-tight">Version</div>
+                        <div class="inline-flex items-center gap-1 rounded-md bg-emerald-500/15 px-2 py-0.5 text-[11px] text-emerald-300 ring-1 ring-emerald-400/20 font-geist tracking-tight animate-bounce-subtle">
+                          <span class="h-1.5 w-1.5 rounded-full bg-emerald-300"></span> v2.0+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rounded-lg border border-white/10 bg-zinc-900/50 p-4 scroll-scale scroll-delay-100">
+                      <p class="text-xs text-zinc-400 font-geist tracking-tight">Blockchain</p>
+                      <p class="text-sm text-white font-geist tracking-tight">Polygon Network</p>
+                      <div class="mt-3 flex items-center justify-between">
+                        <div class="text-xs text-zinc-400 font-geist tracking-tight">Status</div>
+                        <div class="inline-flex items-center gap-1 rounded-md bg-violet-500/15 px-2 py-0.5 text-[11px] text-violet-300 ring-1 ring-violet-400/20 font-geist tracking-tight">
+                          <span class="h-1.5 w-1.5 rounded-full bg-violet-300"></span> Active
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rounded-lg border border-white/10 bg-zinc-900/50 p-4 md:col-span-2 scroll-scale scroll-delay-200">
+                      <div class="flex items-center justify-between">
+                        <p class="text-sm text-white font-geist tracking-tight">Core Technologies</p>
+                        <button class="inline-flex items-center gap-1.5 rounded-md bg-white/5 px-3 py-1.5 text-xs text-white ring-1 ring-white/10 transition hover:bg-white/10 hover:ring-white/30 font-geist tracking-tight">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="package" class="lucide lucide-package h-3.5 w-3.5"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                          View Packages
+                        </button>
+                      </div>
+                      <div class="mt-3 grid grid-cols-3 gap-2 text-xs text-zinc-400 stagger-scroll">
+                        <div class="rounded-md border border-white/10 bg-white/5 px-2 py-1 font-geist tracking-tight animate-scale-in scroll-delay-0">Solidity</div>
+                        <div class="rounded-md border border-white/10 bg-white/5 px-2 py-1 font-geist tracking-tight animate-scale-in scroll-delay-100">Web3.js</div>
+                        <div class="rounded-md border border-white/10 bg-white/5 px-2 py-1 font-geist tracking-tight animate-scale-in scroll-delay-200">Hardhat</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-4 flex items-center justify-between border-t border-white/10 pt-4">
+                    <div class="text-xs text-zinc-400 font-geist tracking-tight">Python, JavaScript, TypeScript</div>
+                    <a href="https://github.com/uzzambutt" target="_blank" class="inline-flex items-center gap-1 text-xs text-indigo-300 hover:text-indigo-200 transition-colors font-geist tracking-tight">
+                      View Repositories
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right h-4 w-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Development Approach -->
+        <section id="approach" class="relative border-t border-white/10">
+          <div class="mx-auto max-w-7xl px-5 py-16 md:py-20">
+            <div class="text-center scroll-animate scroll-delay-0">
+              <h2 class="text-3xl md:text-4xl tracking-tight text-white font-bricolage font-light">My Development Approach</h2>
+              <p class="mt-2 text-zinc-400 font-geist tracking-tight">Structured methodology ensuring quality, transparency, and timely delivery for every project.</p>
+            </div>
+    
+            <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3 stagger-scroll">
+              <!-- Discovery & Planning -->
+              <div class="relative rounded-2xl border border-white/10 bg-zinc-900/40 p-8 transition-all duration-500 hover:border-white/20 hover:bg-zinc-900/60 scroll-animate scroll-delay-0 group">
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-zinc-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative">
+                  <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg text-white font-geist tracking-tight">Discovery & Planning</h3>
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-500/20 ring-1 ring-indigo-300/30 animate-bounce-subtle">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-indigo-300">
+                        <path d="M3 3v18h18"></path>
+                        <path d="M18 17V9"></path>
+                        <path d="M13 17V5"></path>
+                        <path d="M8 17v-3"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-bricolage font-light text-white tracking-tight">Phase 1</span>
+                  </div>
+                  <p class="text-sm text-zinc-400 font-geist tracking-tight mb-6">Understanding your vision and requirements</p>
+                  
+                  <ul class="space-y-3 mb-8 text-sm">
+                    <li class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-indigo-400 flex-shrink-0">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <span class="text-zinc-300 font-geist tracking-tight">Requirement analysis</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-indigo-400 flex-shrink-0">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <span class="text-zinc-300 font-geist tracking-tight">Technical feasibility study</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-indigo-400 flex-shrink-0">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <span class="text-zinc-300 font-geist tracking-tight">Architecture design</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-indigo-400 flex-shrink-0">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <span class="text-zinc-300 font-geist tracking-tight">Project timeline & milestones</span>
+                    </li>
+                  </ul>
+                  
+                  <div class="rounded-lg bg-indigo-500/10 border border-indigo-300/20 p-3 text-center">
+                    <span class="text-xs text-indigo-300 font-geist tracking-tight">Duration: 1-2 weeks</span>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Development & Implementation -->
+              <div class="relative rounded-2xl border border-emerald-300/40 bg-gradient-to-b from-emerald-500/10 via-emerald-500/5 to-white/5 p-8 transition-all duration-500 hover:border-emerald-300/60 hover:shadow-2xl hover:shadow-emerald-500/10 scroll-animate scroll-delay-100 group scale-105 md:scale-110 transform">
+                <div class="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-emerald-500/20 via-emerald-400/10 to-transparent blur opacity-60 group-hover:opacity-80 transition-opacity duration-500 animate-float"></div>
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div class="animate-bounce-subtle text-xs font-semibold text-zinc-900 tracking-tight font-geist bg-gradient-to-r from-emerald-300 to-emerald-400 rounded-full pt-1.5 pr-4 pb-1.5 pl-4 shadow-lg">
+                    Core Phase
+                  </div>
+                </div>
+                
+                <div class="relative">
+                  <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg text-white font-geist tracking-tight">Development & Implementation</h3>
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/20 ring-1 ring-emerald-300/30 animate-bounce-subtle">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-emerald-300">
+                        <path d="m18 16 4-4-4-4"></path>
+                        <path d="m6 8-4 4 4 4"></path>
+                        <path d="m14.5 4-5 16"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-bricolage font-light text-white tracking-tight">Phase 2</span>
+                  </div>
+                  <p class="text-sm text-zinc-400 font-geist tracking-tight mb-6">Building your solution with best practices</p>
+                  
+                  <ul class="space-y-3 mb-8 text-sm">
+                    <li class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-400 flex-shrink-0">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <span class="text-white font-geist tracking-tight">Clean, maintainable code</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-400 flex-shrink-0">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <span class="text-white font-geist tracking-tight">Regular progress updates</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-400 flex-shrink-0">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <span class="text-white font-geist tracking-tight">Testing & quality assurance</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-400 flex-shrink-0">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <span class="text-white font-geist tracking-tight">Code documentation</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-emerald-400 flex-shrink-0">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <span class="text-white font-geist tracking-tight">Version control (Git)</span>
+                    </li>
+                  </ul>
+                  
+                  <div class="rounded-lg bg-emerald-500/10 border border-emerald-300/20 p-3 text-center">
+                    <span class="text-xs text-emerald-300 font-geist tracking-tight">Duration: Project-dependent</span>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Deployment & Support -->
+              <div class="relative rounded-2xl border border-white/10 bg-zinc-900/40 p-8 transition-all duration-500 hover:border-white/20 hover:bg-zinc-900/60 scroll-animate scroll-delay-200 group">
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative">
+                  <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg text-white font-geist tracking-tight">Deployment & Support</h3>
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-violet-500/20 ring-1 ring-violet-300/30 animate-bounce-subtle">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-violet-300">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-3xl font-bricolage font-light text-white tracking-tight">Phase 3</span>
+                  </div>
+                  <p class="text-sm text-zinc-400 font-geist tracking-tight mb-6">Launch and ongoing maintenance</p>
+                  
+                  <ul class="space-y-3 mb-8 text-sm">
+                    <li class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-violet-400 flex-shrink-0">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <span class="text-zinc-300 font-geist tracking-tight">Production deployment</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-violet-400 flex-shrink-0">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <span class="text-zinc-300 font-geist tracking-tight">Performance optimization</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-violet-400 flex-shrink-0">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <span class="text-zinc-300 font-geist tracking-tight">Training & handover</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-violet-400 flex-shrink-0">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <span class="text-zinc-300 font-geist tracking-tight">Post-launch support</span>
+                    </li>
+                  </ul>
+                  
+                  <div class="rounded-lg bg-violet-500/10 border border-violet-300/20 p-3 text-center">
+                    <span class="text-xs text-violet-300 font-geist tracking-tight">Duration: 1-2 weeks + ongoing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Testimonials -->
+        <section id="testimonials" class="relative border-t border-white/10">
+          <div class="max-w-7xl md:py-20 mr-auto ml-auto pt-16 pr-5 pb-16 pl-5 space-y-6">
+            <div class="text-center mb-12 scroll-animate scroll-delay-0">
+              <h2 class="text-3xl md:text-4xl tracking-tight text-white font-bricolage font-light">Recommendations & Testimonials</h2>
+              <p class="mt-2 text-zinc-400 font-geist tracking-tight">Feedback from collaborators, mentors, and project partners.</p>
+            </div>
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 stagger-scroll">
+              <div class="rounded-2xl border border-white/10 bg-zinc-900/40 p-6 transition hover:border-white/20 hover:bg-zinc-900/60 scroll-animate scroll-delay-0 group">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500/20 ring-1 ring-indigo-300/30 text-indigo-300 font-bold font-geist">FA</div>
+                  <div>
+                    <p class="text-sm text-white font-geist tracking-tight">Ali Z.</p>
+                    <p class="text-xs text-zinc-400 font-geist tracking-tight">Chief of Ooperations at NorthernPay</p>
+                  </div>
+                </div>
+                <p class="text-sm text-zinc-300 font-geist tracking-tight">"Uzzam's technical depth in AI and blockchain is impressive. He delivers high-quality, well-structured code and innovative ideas."</p>
+                <div class="mt-4 flex gap-1 stagger-entrance">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-amber-300 text-amber-300 animate-bounce-subtle"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 01 .295-.295l-3.73-3.73a.53.53 0 0 1-.154-.374V2.56l-1.178-2.373A.53.53 0 0 1 11.525 2.295Z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-amber-300 text-amber-300"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .295.295l-3.73 3.73a.53.53 0 0 1-.154.374V2.56l-1.178-2.373A.53.53 0 0 1 11.525 2.295Z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-amber-300 text-amber-300"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .295.295l-3.73 3.73a.53.53 0 0 1-.154.374V2.56l-1.178-2.373A.53.53 0 0 1 11.525 2.295Z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-amber-300 text-amber-300"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .295.295l-3.73 3.73a.53.53 0 0 1-.154.374V2.56l-1.178-2.373A.53.53 0 0 1 11.525 2.295Z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-amber-300 text-amber-300"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .295.295l-3.73 3.73a.53.53 0 0 1-.154.374V2.56l-1.178-2.373A.53.53 0 0 1 11.525 2.295Z"></path></svg>
+                </div>
+              </div>
+              
+              <div class="rounded-2xl border border-white/10 bg-zinc-900/40 p-6 transition hover:border-white/20 hover:bg-zinc-900/60 scroll-animate scroll-delay-100 group">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/20 ring-1 ring-emerald-300/30 text-emerald-300 font-bold font-geist">AB</div>
+                  <div>
+                    <p class="text-sm text-white font-geist tracking-tight">Ahmad B.</p>
+                    <p class="text-xs text-zinc-400 font-geist tracking-tight">AI Researcher</p>
+                  </div>
+                </div>
+                <p class="text-sm text-zinc-300 font-geist tracking-tight">"Working with Uzzam was an excellent experience. His understanding of data modeling and crypto systems is top-tier."</p>
+                <div class="mt-4 flex gap-1 stagger-entrance">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-amber-300 text-amber-300 animate-bounce-subtle"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .295.295l-3.73 3.73a.53.53 0 0 1-.154.374V2.56l-1.178-2.373A.53.53 0 0 1 11.525 2.295Z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-amber-300 text-amber-300"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .295.295l-3.73 3.73a.53.53 0 0 1-.154.374V2.56l-1.178-2.373A.53.53 0 0 1 11.525 2.295Z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-amber-300 text-amber-300"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .295.295l-3.73 3.73a.53.53 0 0 1-.154.374V2.56l-1.178-2.373A.53.53 0 0 1 11.525 2.295Z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-amber-300 text-amber-300"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .295.295l-3.73 3.73a.53.53 0 0 1-.154.374V2.56l-1.178-2.373A.53.53 0 0 1 11.525 2.295Z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-amber-300 text-amber-300"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .295.295l-3.73 3.73a.53.53 0 0 1-.154.374V2.56l-1.178-2.373A.53.53 0 0 1 11.525 2.295Z"></path></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- CTA Section -->
+        <section class="relative border-t border-white/10">
+          <div class="mx-auto max-w-7xl px-5 py-16 md:py-20">
+            <div class="text-center space-y-6 scroll-animate scroll-delay-0">
+              <h2 class="text-3xl md:text-4xl tracking-tight text-white font-bricolage font-light">Let's Build Something Amazing</h2>
+              <p class="max-w-2xl mx-auto text-zinc-400 font-geist tracking-tight">Open to freelance projects, collaborations, and innovative opportunities in AI and blockchain. Let's create the future together.</p>
+              <div class="flex flex-col gap-4 sm:flex-row sm:justify-center animate-fade-in-up delay-400">
+                <a href="mailto:uzzambutt1@outlook.com" class="inline-flex items-center justify-center gap-2 font-geist tracking-tight animate-float" style="--green: #1BFD9C; font-size: 16px; padding: 0.8em 2.5em; letter-spacing: 0.06em; position: relative; font-family: inherit; border-radius: 0.6em; overflow: hidden; transition: all 0.3s; line-height: 1.4em; border: 2px solid var(--green); background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%); color: var(--green); box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail" class="lucide lucide-mail h-4 w-4"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                  Get In Touch
+                </a>
+                <a href="#" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white/5 px-6 py-3 text-sm text-white ring-1 ring-white/10 transition hover:bg-white/10 hover:ring-white/30 font-geist tracking-tight animate-float">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="download" class="lucide lucide-download h-4 w-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+                  Download Resume
+                </a>
+              </div>
+              <p class="text-sm text-zinc-500 font-geist tracking-tight">Available for remote & hybrid opportunities • Open source contributor • Portfolio on GitHub</p>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Footer -->
+        <footer class="relative border-t border-white/10 bg-zinc-950/50 backdrop-blur">
+          <div class="mx-auto max-w-7xl px-5 py-12">
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-5">
+              <div class="col-span-2 md:col-span-2">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-indigo-500 to-cyan-400 text-white text-sm font-bold tracking-tight font-geist">UB</div>
+                  <span class="text-lg text-white tracking-tight font-geist">Muhammad Uzzam Butt</span>
+                </div>
+                <p class="text-sm text-zinc-400 font-geist tracking-tight max-w-sm">AI & Blockchain Developer building intelligent systems for the decentralized future. Open to collaborations and innovative projects.</p>
+              </div>
+              
+              <div>
+                <h3 class="text-sm font-semibold text-white mb-3 font-geist tracking-tight">Portfolio</h3>
+                <ul class="space-y-2 text-sm text-zinc-400">
+                  <li><a href="#projects" class="hover:text-white transition-colors font-geist tracking-tight">Projects</a></li>
+                  <li><a href="#achievements" class="hover:text-white transition-colors font-geist tracking-tight">Achievements</a></li>
+                  <li><a href="#tech-stack" class="hover:text-white transition-colors font-geist tracking-tight">Tech Stack</a></li>
+                  <li><a href="#testimonials" class="hover:text-white transition-colors font-geist tracking-tight">Testimonials</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-sm font-semibold text-white mb-3 font-geist tracking-tight">Projects</h3>
+                <ul class="space-y-2 text-sm text-zinc-400">
+                  <li><a href="#projects" class="hover:text-white transition-colors font-geist tracking-tight">AICryptoPrediction</a></li>
+                  <li><a href="#projects" class="hover:text-white transition-colors font-geist tracking-tight">NorthernPay</a></li>
+                  <li><a href="#projects" class="hover:text-white transition-colors font-geist tracking-tight">PKR Stablecoin</a></li>
+                  <li><a href="https://github.com/uzzambutt" target="_blank" class="hover:text-white transition-colors font-geist tracking-tight">GitHub</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-sm font-semibold text-white mb-3 font-geist tracking-tight">Contact</h3>
+                <ul class="space-y-2 text-sm text-zinc-400">
+                  <li><a href="mailto:uzzambutt1@outlook.com" class="hover:text-white transition-colors font-geist tracking-tight">Email Me</a></li>
+                  <li><a href="https://linkedin.com/in/uzzambutt" target="_blank" class="hover:text-white transition-colors font-geist tracking-tight">LinkedIn</a></li>
+                  <li><a href="https://www.instagram.com/itz.uzzam?igsh=YnFnNjRjeGc4eHcx" target="_blank" class="hover:text-white transition-colors font-geist tracking-tight">Instagram</a></li>
+                  <li><a href="#" class="hover:text-white transition-colors font-geist tracking-tight">Resume</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
+              <p class="text-sm text-zinc-500 font-geist tracking-tight">© 2025 Muhammad Uzzam Butt. Backed By <a href="https://octacord.site" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 transition-colors">Octacord</a></p>
+              <div class="flex items-center gap-4 mt-4 md:mt-0">
+                <a href="https://www.instagram.com/itz.uzzam?igsh=YnFnNjRjeGc4eHcx" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                </a>
+                <a href="https://linkedin.com/in/uzzambutt" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect width="4" height="12" x="2" y="9"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+                <a href="https://github.com/uzzambutt" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path>
+                  </svg>
+                </a>
+                <a href="mailto:uzzambutt1@outlook.com" class="text-zinc-400 hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+    
+        <!-- JavaScript -->
+        <script>
+          // Mobile menu toggle
+          function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+          }
+    
+          // Scroll progress bar
+          function updateScrollProgress() {
+            const scrollProgress = document.querySelector('.scroll-progress');
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+          }
+    
+          // Parallax effects
+          function updateParallax() {
+            const elements = document.querySelectorAll('.parallax');
+            elements.forEach(el => {
+              const scrolled = window.pageYOffset;
+              const speed = 0.5;
+              el.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+          }
+    
+          // Scroll animations
+          function checkScrollAnimations() {
+            const elements = document.querySelectorAll('.scroll-animate, .scroll-slide-left, .scroll-slide-right, .scroll-scale, .scroll-rotate');
+            
+            elements.forEach(el => {
+              const elementTop = el.getBoundingClientRect().top;
+              const elementVisible = 150;
+              
+              if (elementTop < window.innerHeight - elementVisible) {
+                el.classList.add('animate');
+              }
+            });
+          }
+    
+          // Chart initialization
+          function initChart() {
+            const ctx = document.getElementById('hoursChart');
+            if (ctx) {
+              new Chart(ctx, {
+                type: 'bar',
+                data: {
+                  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                  datasets: [{
+                    label: 'Billable',
+                    data: [7, 8.5, 6, 9, 7.5, 3, 2],
+                    backgroundColor: 'rgba(52, 211, 153, 0.8)',
+                    borderColor: 'rgba(52, 211, 153, 1)',
+                    borderWidth: 1
+                  }, {
+                    label: 'Non-billable',
+                    data: [2, 1.5, 3, 1, 2.5, 1, 0.5],
+                    backgroundColor: 'rgba(113, 113, 122, 0.8)',
+                    borderColor: 'rgba(113, 113, 122, 1)',
+                    borderWidth: 1
+                  }]
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  plugins: {
+                    legend: {
+                      display: false
+                    }
+                  },
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      grid: {
+                        color: 'rgba(255, 255, 255, 0.1)',
+                        drawBorder: false
+                      },
+                      ticks: {
+                        color: 'rgba(161, 161, 170, 0.8)',
+                        font: {
+                          size: 11
+                        }
+                      }
+                    },
+                    x: {
+                      grid: {
+                        display: false
+                      },
+                      ticks: {
+                        color: 'rgba(161, 161, 170, 0.8)',
+                        font: {
+                          size: 11
+                        }
+                      }
+                    }
+                  }
+                }
+              });
+            }
+          }
+    
+          // Event listeners
+          window.addEventListener('scroll', () => {
+            updateScrollProgress();
+            updateParallax();
+            checkScrollAnimations();
+          });
+    
+          window.addEventListener('load', () => {
+            initChart();
+            checkScrollAnimations();
+          });
+    
+          // Initialize on DOM ready
+          document.addEventListener('DOMContentLoaded', () => {
+            checkScrollAnimations();
+          });
+        </script>
+      
+    </body></html>
